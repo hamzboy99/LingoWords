@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TextDeserializer implements FileDeserializerInterface{
+public class TextDeserializer implements FileDeserializerInterface {
 
     public ArrayList<String> deserialize(String file) throws FileNotFoundException {
         ArrayList<String> words = new ArrayList<>();
@@ -27,7 +27,6 @@ public class TextDeserializer implements FileDeserializerInterface{
             }
             myReader.close();
         }
-
         return words;
     }
 }
