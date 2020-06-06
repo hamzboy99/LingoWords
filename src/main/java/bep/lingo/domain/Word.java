@@ -1,22 +1,21 @@
 package bep.lingo.domain;
 
+/**
+ *
+ *
+ * @author Hamza Kayouhi
+ */
+
 public class Word {
-    private String word;
+    private final transient String words;
 
-    public Word(String word) {
-        this.word = word;
-    }
-
-    public void setWord(String word) {
-        this.word = word;
+    public Word(final String word) {
+        this.words = word;
     }
 
     public String getWord(){
-        return word;
+        return words;
     }
 
-    @Override
-    public String toString() {
-        return word;
-    }
+
 }

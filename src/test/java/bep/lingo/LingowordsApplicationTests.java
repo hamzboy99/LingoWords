@@ -10,4 +10,15 @@ class LingowordsApplicationTests {
 	void contextLoads() {
 	}
 
+    @Test
+    void setWord() {
+    }
+
+    @Test
+    void getWord() {
+    }
+
+    @Test
+    void testToString() {
+    }
 }
