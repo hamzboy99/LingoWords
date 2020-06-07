@@ -1,7 +1,7 @@
 package bep.lingo.application;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 
 public interface WordProcessorInterface {
-    void storeWords(ArrayList<String> content, String file) throws IOException;
-    ArrayList<String> filterWords(ArrayList<String> content);
+    void storeWords(List<String> content, String file) throws IOException;
+    List<String> filterWords(List<String> content);
 
 }

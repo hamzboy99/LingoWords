@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-public class LingowordsApplication {//NOPMD
+public class LingowordsApplication {
 
 	public static void main(final String[] args) {
 		SpringApplication.run(LingowordsApplication.class, args);

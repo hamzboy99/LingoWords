@@ -1,28 +1,27 @@
 package bep.lingo;
 
 import bep.lingo.application.WordProcessor;
+import bep.lingo.service.CommandLine;
 import bep.lingo.service.TextDeserializer;
 import org.springframework.context.annotation.*;
-
-import java.io.IOException;
-
-/**
- *
- *
- * @author Hamza Kayouhi
- */
 
 @Configuration
 public class AppConfig {
 
     @Bean
-    public WordProcessor wordProcessor() throws IOException {
-        final TextDeserializer textDeserializer = new TextDeserializer();
-        return new WordProcessor(textDeserializer);
+    public TextDeserializer textDeserializer() {
+        return new TextDeserializer();
     }
 
     @Bean
-    public TextDeserializer textDeserializer() {
-        return new TextDeserializer();
+    public WordProcessor wordprocessor() {
+        return new WordProcessor();
+    }
+
+    @Bean
+    public CommandLine commandline(){
+        final TextDeserializer textDeserializer = new TextDeserializer();
+        final WordProcessor wordProcessor =  new WordProcessor();
+        return new CommandLine(textDeserializer,wordProcessor);
     }
 }
