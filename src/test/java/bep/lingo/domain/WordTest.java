@@ -10,7 +10,7 @@ public class WordTest {
     @Test
     @DisplayName("getWord")
     public void testGetForeignWord() {
-        final Word word = new Word("test");
-        assertEquals("test", word.getWord());
+        final Word word = new Word("Test");
+        assertEquals("Test", word.getWord());
     }
 }

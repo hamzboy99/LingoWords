@@ -11,8 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Wordprocessor")
 public class WordProcessorTest {
-    private final transient List<String> actualWords = Arrays.asList("kwijl", "hijgen", "hipheid");
-    private final transient List<String> words = Arrays.asList("bijt", "kwijl", "hijgen", "hipheid", "hinkelen", "hüttenkäse", "intuïtie", "bínnen", "blèren", "Hindoe", "hink-stap-sprong", "6-jarige");
+    private final transient List<String> words = Arrays.asList("mand", "manco", "mandir", "mandala", "mandfles", "tussenin", "bedrijfsgoed", "tussenjaar", "tussenkop", "tussen-n", "bedrijfs-pc-netwerk");
+    private final transient List<String> actualWords = Arrays.asList("manco", "mandir", "mandala");
     private static String fileLocation = "src/test/resources/storewords.txt";
 
     @Test

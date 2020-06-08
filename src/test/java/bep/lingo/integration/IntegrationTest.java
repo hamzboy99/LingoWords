@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class IntegrationTest {
     private static String textFileLocation = "src/test/resources/deserializetext.txt";
     private static String csvFileLocation = "src/test/resources/deserializetext.csv";
-    private final transient List<String> actualWords = Arrays.asList("kwijl", "hijgen", "hipheid");
+    private final transient List<String> actualWords = Arrays.asList("manco", "mandir", "mandala");
     private static String storeLocation = "src/test/resources/storewords.txt";
 
     public static Stream<Arguments> files() {

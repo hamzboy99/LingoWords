@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @DisplayName("TextDeserializer")
 public class TextDeserializerTest {
     private static String textFileLocation = "src/test/resources/deserializetext.txt";
-    private static List<String> words = Arrays.asList("bijt", "kwijl", "hijgen", "hipheid", "hinkelen", "hoofdpersoon", "exuberant", "ezeldrijver", "parelrand", "uitkeringskas");
+    private static List<String> words = Arrays.asList("mand", "manco", "mandir", "mandala", "mandfles", "tussenin", "bedrijfsgoed", "tussenjaar", "tussenkop", "tussen-n", "bedrijfs-pc-netwerk");
 
     @Test
     @DisplayName("Deserialize")
