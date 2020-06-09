@@ -30,12 +30,13 @@ jobs:
       uses: codecov/codecov-action@v1
       with:
         file: ./target/site/jacoco/jacoco.xml
+        token: ${{ secrets.CODECOV_TOKEN }}
         flags: unittests
         name: codecov-umbrella
         fail_ci_if_error: true
-        token: ${{ github.token }}
+
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.CODECOV_TOKEN }}
