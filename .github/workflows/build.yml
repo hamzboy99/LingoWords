@@ -35,10 +35,7 @@ jobs:
         name: codecov-umbrella
         fail_ci_if_error: true
         
-    - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy
+    - name: Publish package
+      run: mvn -B deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        DISTRIBUTION_ID: github
-        DISTRIBUTION_NAME: bep.lingo
-        DISTRIBUTION_URL: https://maven.pkg.github.com/hamzboy99/LingoWords
