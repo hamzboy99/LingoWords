@@ -17,8 +17,8 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub hamzboy99 Apache Maven Packages</name>
-            <url>https://github.com/hamzboy99/LingoWords</url>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/hamzboy99/LingoWords</url>
         </repository>
     </distributionManagement>
 
