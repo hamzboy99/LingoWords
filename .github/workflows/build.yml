@@ -26,15 +26,14 @@ jobs:
     - name: Build, test, report
       run: mvn -B package --file pom.xml
       
-#     - name: Upload coverage to Codecov
-#       uses: codecov/codecov-action@v1
-#       with:
-#         file: ./target/site/jacoco/jacoco.xml
-#         flags: unittests
-#         name: codecov-umbrella
-#         fail_ci_if_error: true
-#       env:
-#         GITHUB_TOKEN: ${{ github.token }}
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        file: ./target/site/jacoco/jacoco.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: true
+        token: ${{ github.token }}
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
