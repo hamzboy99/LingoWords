@@ -2,7 +2,7 @@ package bep.lingo.integration;
 
 
 import bep.lingo.application.WordProcessor;
-import bep.lingo.service.TextDeserializer;
+import bep.lingo.service.WordRefiner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -24,6 +24,9 @@ public class IntegrationTest {
     private final transient List<String> actualWords = Arrays.asList("manco", "mandir", "mandala");
     private static String storeLocation = "src/test/resources/storewords.txt";
 
+    public IntegrationTest() {
+    }
+
     public static Stream<Arguments> files() {
         return Stream.of(Arguments.of(textFileLocation),
                 Arguments.of(csvFileLocation));
@@ -33,12 +36,12 @@ public class IntegrationTest {
     @MethodSource("files")
     @DisplayName("Deserialize")
     public void testApplication(final String fileLocation) throws IOException {
-        final TextDeserializer textDeserializer = new TextDeserializer();
+        final WordRefiner wordRefiner = new WordRefiner();
         final WordProcessor wordProcessor = new WordProcessor();
 
-        final List<String> deserializedText = textDeserializer.deserialize(fileLocation);
-        final List<String> checkedWords = wordProcessor.filterWords(deserializedText);
-        wordProcessor.storeWords(checkedWords, storeLocation);
+        final List<String> deserializedText = wordRefiner.refine(fileLocation);
+        final List<String> checkedWords = wordProcessor.refineWords(deserializedText);
+        wordProcessor.saveWords(checkedWords, storeLocation);
         assertEquals(actualWords, checkedWords);
     }
 }

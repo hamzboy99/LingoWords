@@ -9,17 +9,20 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("Wordprocessor")
+@DisplayName("WordProcessor")
 public class WordProcessorTest {
     private final transient List<String> words = Arrays.asList("mand", "manco", "mandir", "mandala", "mandfles", "tussenin", "bedrijfsgoed", "tussenjaar", "tussenkop", "tussen-n", "bedrijfs-pc-netwerk");
     private final transient List<String> actualWords = Arrays.asList("manco", "mandir", "mandala");
-    private static String fileLocation = "src/test/resources/storewords.txt";
+    private static String file = "src/test/resources/storewords.txt";
+
+    public WordProcessorTest() {
+    }
 
     @Test
     @DisplayName("Filter")
     public void testFilterWords() {
         final WordProcessor wordProcessor = new WordProcessor();
-        final List<String> checkedWords = wordProcessor.filterWords(words);
+        final List<String> checkedWords = wordProcessor.refineWords(words);
         assertEquals(actualWords, checkedWords);
     }
 
@@ -27,8 +30,8 @@ public class WordProcessorTest {
     @DisplayName("Store")
     public void testStoreWords() throws IOException {
         final WordProcessor wordProcessor = new WordProcessor();
-        final List<String> checkedWords = wordProcessor.filterWords(words);
-        wordProcessor.storeWords(actualWords, fileLocation);
+        final List<String> checkedWords = wordProcessor.refineWords(words);
+        wordProcessor.saveWords(actualWords, file);
         assertEquals(actualWords, checkedWords);
     }
 }

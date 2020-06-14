@@ -1,1 +1,3 @@
-[manco, mandir, mandala]
+manco
+mandir
+mandala

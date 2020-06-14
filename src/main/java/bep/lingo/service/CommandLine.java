@@ -8,22 +8,21 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
-public class CommandLine implements CommandLineRunner, CommandLineInterface {
-    private final transient TextDeserializer textDeserializer;
+public class CommandLine implements CommandLineInterface, CommandLineRunner {
+    private final transient WordRefiner wordRefiner;
     private final transient WordProcessor wordProcessor;
-    private static String fileLocation = "src/main/resources/static/basiswoorden-gekeurd.txt";
-    private static String newFileLocation = "src/main/resources/static/basiswoorden-aangepast.txt";
+    private static String file = "src/main/resources/static/basiswoorden-gekeurd.txt";
+    private static String newFile = "src/main/resources/static/basiswoorden-aangepast.txt";
 
-
-    public CommandLine(final TextDeserializer textDeserializer, final WordProcessor wordProcessor) {
-        this.textDeserializer = textDeserializer;
+    public CommandLine(final WordRefiner wordRefiner, final WordProcessor wordProcessor) {
+        this.wordRefiner = wordRefiner;
         this.wordProcessor = wordProcessor;
     }
 
     @Override
     public void run(final String... args) throws IOException {
-        final List<String> deserializeWords = textDeserializer.deserialize(fileLocation);
-        final List<String> filterWords = wordProcessor.filterWords(deserializeWords);
-        wordProcessor.storeWords(filterWords, newFileLocation);
+        final List<String> refineWords = wordRefiner.refine(file);
+        final List<String> refinedWords = wordProcessor.refineWords(refineWords);
+        wordProcessor.saveWords(refinedWords, newFile);
     }
 }

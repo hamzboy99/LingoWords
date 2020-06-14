@@ -4,11 +4,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("Word domain")
+@DisplayName("Domain Word")
 public class WordTest {
 
+    public WordTest() {
+    }
+
     @Test
-    @DisplayName("getWord")
+    @DisplayName("getTheWord")
     public void testGetForeignWord() {
         final Word word = new Word("Test");
         assertEquals("Test", word.getWord());

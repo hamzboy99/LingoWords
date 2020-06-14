@@ -12,23 +12,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @VisibleForTesting
-@DisplayName("TextDeserializer")
+@DisplayName("WordRefiner")
 public class TextDeserializerTest {
     private static String textFileLocation = "src/test/resources/deserializetext.txt";
     private static List<String> words = Arrays.asList("mand", "manco", "mandir", "mandala", "mandfles", "tussenin", "bedrijfsgoed", "tussenjaar", "tussenkop", "tussen-n", "bedrijfs-pc-netwerk");
 
+    public TextDeserializerTest() {
+    }
+
     @Test
     @DisplayName("Deserialize")
     public void testDeserialize() throws FileNotFoundException {
-        final TextDeserializer textDeserializer = new TextDeserializer();
-        final List<String> deserializedText = textDeserializer.deserialize(textFileLocation);
+        final WordRefiner wordRefiner = new WordRefiner();
+        final List<String> deserializedText = wordRefiner.refine(textFileLocation);
         assertEquals(words, deserializedText);
     }
 
     @Test
-    @DisplayName("File not Found")
+    @DisplayName("Can't find file")
     public void testFileNotFoundException() {
-        final TextDeserializer textDeserializer = new TextDeserializer();
-        assertThrows(FileNotFoundException.class, () -> textDeserializer.deserialize("text.txt"));
+        final WordRefiner wordRefiner = new WordRefiner();
+        assertThrows(FileNotFoundException.class, () -> wordRefiner.refine("text.txt"));
     }
 }

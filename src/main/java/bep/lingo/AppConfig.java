@@ -2,15 +2,18 @@ package bep.lingo;
 
 import bep.lingo.application.WordProcessor;
 import bep.lingo.service.CommandLine;
-import bep.lingo.service.TextDeserializer;
+import bep.lingo.service.WordRefiner;
 import org.springframework.context.annotation.*;
 
 @Configuration
 public class AppConfig {
 
+    public AppConfig() {
+    }
+
     @Bean
-    public TextDeserializer textDeserializer() {
-        return new TextDeserializer();
+    public WordRefiner textDeserializer() {
+        return new WordRefiner();
     }
 
     @Bean
@@ -20,8 +23,8 @@ public class AppConfig {
 
     @Bean
     public CommandLine commandline(){
-        final TextDeserializer textDeserializer = new TextDeserializer();
+        final WordRefiner wordRefiner = new WordRefiner();
         final WordProcessor wordProcessor =  new WordProcessor();
-        return new CommandLine(textDeserializer,wordProcessor);
+        return new CommandLine(wordRefiner,wordProcessor);
     }
 }

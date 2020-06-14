@@ -1,21 +1,14 @@
 package bep.lingo.domain;
 
-/**
- *
- *
- * @author Hamza Kayouhi
- */
-
 public class Word {
-    private final transient String words;
+    private final transient String lingoword;
 
-    public Word(final String word) {
-        this.words = word;
+    public Word(final String lingoword) {
+        this.lingoword = lingoword;
     }
 
     public String getWord(){
-        return words;
+        return lingoword;
     }
-
 
 }
