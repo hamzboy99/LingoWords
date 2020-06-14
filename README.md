@@ -6,3 +6,12 @@
 
 ### JDepend
 ![JDepend](JDepend.png)
+
+### Jacoco
+![Jacoco](Jacoco.png)
+
+### PMD
+![PMD](PMD.png)
+
+### Pit Test
+![PMD](PitTest.png)
