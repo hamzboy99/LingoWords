@@ -29,6 +29,9 @@
         <commandline-class>bep.lingo.service.CommandLine</commandline-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <sonar.projectKey>hamzboy99_LingoWords</sonar.projectKey>
+        <sonar.organization>hamzboy99</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <dependencies>
